@@ -38,7 +38,7 @@ function checkStatus(){
 }
 //단어 불러오기
 function getWords(){
-    axios.get('/user?ID=12345')
+    axios.get('https://random-word-api.herokuapp.com/word')
         .then(function (response) {
             // handle success
             console.log(response.data);
@@ -46,9 +46,6 @@ function getWords(){
         .catch(function (error) {
             // handle error
             console.log(error);
-        })
-        .finally(function () {
-            // always executed
         });
     words = ['Hello', 'Kakao', 'IlIlllI', 'trap'];
     buttonChange('게임시작');
