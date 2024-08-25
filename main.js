@@ -38,17 +38,20 @@ function checkStatus(){
 }
 //단어 불러오기
 function getWords(){
-    axios.get('https://random-word-api.herokuapp.com/word')
+ function getWords(){
+    axios.get('https://random-word-api.herokuapp.com/word?number=100')
         .then(function (response) {
             // handle success
             console.log(response.data);
+            words = response.data;
+            buttonChange('게임시작');
         })
         .catch(function (error) {
             // handle error
             console.log(error);
+            words = ['Hello', 'Kakao', 'IlIlllI', 'trap'];
+        buttonChange('게임시작');
         });
-    words = ['Hello', 'Kakao', 'IlIlllI', 'trap'];
-    buttonChange('게임시작');
 };
 
 
